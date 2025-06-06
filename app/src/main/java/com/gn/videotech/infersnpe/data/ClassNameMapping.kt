@@ -1,0 +1,146 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2025 Fabricio Batista Narcizo, Elizabete Munzlinger, Sai Narsi Reddy Donthi Reddy,
+ * and Shan Ahmed Shaffi.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+ * associated documentation files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or
+ * substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+ * NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+package com.gn.videotech.infersnpe.data
+
+/**
+ * This map is used to map the class index to the class name.
+ */
+val classNameMapping = arrayOf(
+    mapOf(
+        0 to "Person",
+        1 to "Bicycle",
+        2 to "Car",
+        3 to "Motorcycle",
+        4 to "Airplane",
+        5 to "Bus",
+        6 to "Train",
+        7 to "Truck",
+        8 to "Boat",
+        9 to "Traffic Light",
+        10 to "Fire Hydrant",
+        11 to "Stop Sign",
+        12 to "Parking Meter",
+        13 to "Bench",
+        14 to "Bird",
+        15 to "Cat",
+        16 to "Dog",
+        17 to "Horse",
+        18 to "Sheep",
+        19 to "Cow",
+        20 to "Elephant",
+        21 to "Bear",
+        22 to "Zebra",
+        23 to "Giraffe",
+        24 to "Backpack",
+        25 to "Umbrella",
+        26 to "Handbag",
+        27 to "Tie",
+        28 to "Suitcase",
+        29 to "Frisbee",
+        30 to "Skis",
+        31 to "Snowboard",
+        32 to "Sports Ball",
+        33 to "Kite",
+        34 to "Baseball Bat",
+        35 to "Baseball Glove",
+        36 to "Skateboard",
+        37 to "Surfboard",
+        38 to "Tennis Racket",
+        39 to "Bottle",
+        40 to "Wine Glass",
+        41 to "Cup",
+        42 to "Fork",
+        43 to "Knife",
+        44 to "Spoon",
+        45 to "Bowl",
+        46 to "Banana",
+        47 to "Apple",
+        48 to "Sandwich",
+        49 to "Orange",
+        50 to "Broccoli",
+        51 to "Carrot",
+        52 to "Hot Dog",
+        53 to "Pizza",
+        54 to "Donut",
+        55 to "Cake",
+        56 to "Chair",
+        57 to "Couch",
+        58 to "Potted Plant",
+        59 to "Bed",
+        60 to "Dining Table",
+        61 to "Toilet",
+        62 to "TV",
+        63 to "Laptop",
+        64 to "Mouse",
+        65 to "Remote",
+        66 to "Keyboard",
+        67 to "Cell Phone",
+        68 to "Microwave",
+        69 to "Oven",
+        70 to "Toaster",
+        71 to "Sink",
+        72 to "Refrigerator",
+        73 to "Book",
+        74 to "Clock",
+        75 to "Vase",
+        76 to "Scissors",
+        77 to "Teddy Bear",
+        78 to "Hair Drier",
+        79 to "Toothbrush"
+    ),
+    mapOf(
+        0 to "Call",
+        1 to "Dislike",
+        2 to "Fist",
+        3 to "Four",
+        4 to "Grabbing",
+        5 to "Grip",
+        6 to "Hand Heart",
+        7 to "Hand Heart2",
+        8 to "Holy",
+        9 to "Like",
+        10 to "Little Finger",
+        11 to "Middle Finger",
+        12 to "Mute",
+        13 to "Xsign",
+        14 to "Ok",
+        15 to "One",
+        16 to "Palm",
+        17 to "Peace",
+        18 to "Peace Inverted",
+        19 to "Point",
+        20 to "Rock",
+        21 to "Stop",
+        22 to "Stop Inverted",
+        23 to "Take Picture",
+        24 to "Three",
+        25 to "Three2",
+        26 to "Three3",
+        27 to "Three Gun",
+        28 to "Thumb Index",
+        29 to "Thumb Index2",
+        30 to "Timeout",
+        31 to "Two Up",
+        32 to "Two Up Inverted",
+        33 to "No Gesture"
+    )
+)

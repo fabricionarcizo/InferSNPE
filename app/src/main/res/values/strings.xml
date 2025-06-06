@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">InferSNPE</string>
+    <string name="btn_cpu">CPU</string>
+    <string name="btn_gpu">GPU</string>
+    <string name="btn_dsp">DSP</string>
+    <string name="model_selector">Select Model</string>
+    <string name="model_selector_error">This model is not supported by this mode</string>
+    <string name="loading_model">Loading Model</string>
+    <string name="fps_text">FPS: %.0f</string>
+    <string name="overlay_image_content_description">This is the annotated image</string>
+    <string name="button_camera_switch_description">Switch camera</string>
+</resources>
