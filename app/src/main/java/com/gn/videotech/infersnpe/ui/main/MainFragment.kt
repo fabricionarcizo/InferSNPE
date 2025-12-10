@@ -26,6 +26,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Surface
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
@@ -36,6 +37,9 @@ import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
+import androidx.camera.core.resolutionselector.AspectRatioStrategy
+import androidx.camera.core.resolutionselector.ResolutionSelector
+import androidx.camera.core.resolutionselector.ResolutionStrategy
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -377,20 +381,35 @@ class MainFragment : Fragment() {
         // Add a listener to the `cameraProviderFuture`.
         cameraProviderFuture.addListener({
 
+            // Set target rotation based on the PreviewView's display rotation.
+            val targetRotation = binding.previewView.display?.rotation ?: Surface.ROTATION_0
+
+            // Set resolution selector to prioritize 16:9 aspect ratio and highest available resolution.
+            val resolutionSelector = ResolutionSelector.Builder()
+                .setAspectRatioStrategy(AspectRatioStrategy.RATIO_16_9_FALLBACK_AUTO_STRATEGY)
+                .setResolutionStrategy(ResolutionStrategy.HIGHEST_AVAILABLE_STRATEGY)
+                .setAllowedResolutionMode(ResolutionSelector.PREFER_HIGHER_RESOLUTION_OVER_CAPTURE_RATE)
+                .build()
+
             // Used to bind the lifecycle of cameras to the lifecycle owner.
             val cameraProvider = cameraProviderFuture.get()
 
             // Video camera streaming preview.
-            val preview = Preview.Builder().build().also {
-                it.surfaceProvider = binding.previewView.surfaceProvider
-            }
+            val preview = Preview.Builder()
+                .setTargetRotation(targetRotation)
+                .setResolutionSelector(resolutionSelector)
+                .build().also {
+                    it.surfaceProvider = binding.previewView.surfaceProvider
+                }
 
             // Set up the image capture by getting a reference to the `ImageCapture`.
             imageCapture = ImageCapture.Builder().build()
 
             // Set up the image analysis use case.
             val imageAnalyzer = ImageAnalysis.Builder()
+                .setTargetRotation(targetRotation)
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                .setResolutionSelector(resolutionSelector)
                 .build()
                 .also {
                     it.setAnalyzer(analysisExecutor, ::processImageFrame)
